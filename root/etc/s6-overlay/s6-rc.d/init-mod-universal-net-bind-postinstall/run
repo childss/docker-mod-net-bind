@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+if [ -z "${NET_BIND_BINARY+x}" ]; then
+    echo "**** No binary to setcap NET_BIND_SERVICE provided ****"
+    echo "Set the full path to the binary in environment variable NET_BIND_BINARY"
+    exit 0
+fi
+
+setcap CAP_NET_BIND_SERVICE=+eip $NET_BIND_BINARY
+

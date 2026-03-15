@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bash
+
+## Ubuntu
+if [ -f /usr/bin/apt ]; then
+    echo "\
+        libcap2-bin" >> /mod-repo-packages-to-install.list
+
+fi
+# Alpine
+if [ -f /sbin/apk ]; then
+    echo "\
+        libcap-setcap" >> /mod-repo-packages-to-install.list
+fi
+
