@@ -1,15 +1,14 @@
 name: Build Image
 
-on:
-  pull_request_target:
+on: [push, pull_request_target]
 
 env:
-  GITHUB_REPO: "linuxserver/docker-mods"
-  ENDPOINT: "linuxserver/mods"
+  GITHUB_REPO: "childss/docker-mod-net-bind"
+  ENDPOINT: "childss/docker-mod-net-bind"
   BASEIMAGE: "pr"
-  MODNAME: "build"
+  MODNAME: "net-bind"
   MULTI_ARCH: "true"
-  MOD_VERSION: ""
+  MOD_VERSION: "0.1.0"
 
 jobs:
   set-vars:
